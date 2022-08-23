@@ -1,0 +1,22 @@
+.nav {
+    top: 0;
+    position: sticky;
+    background-color: #54a0ff;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.brand {
+    height: 100px;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: rotate(40deg);
+}
+
+.brand .logo {
+    width: 150px;
+    height: auto;
+}
