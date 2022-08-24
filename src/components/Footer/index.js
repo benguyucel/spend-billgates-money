@@ -11,7 +11,7 @@ function Footer() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(calcTotal(total))
-    }, [total])
+    }, [total,dispatch])
     return (
         <div className="cart" style={{ display: 'flex', justifyContent: 'center' }}>
             <ul>

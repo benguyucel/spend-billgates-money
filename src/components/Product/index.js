@@ -1,18 +1,13 @@
 import { Box, Flex, Image, Spacer, Button, Input } from '@chakra-ui/react'
 import styled from './index.module.css'
 import { formatMoney } from '../../utils/moneyFormat'
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart } from '../../redux/slice/cartSlice'
 const Product = ({ item }) => {
   const [count, setCount] = useState(0)
   const [pageLoaded, setPageLoaded] = useState(false)
-  const [buyDisabled, setBuyDisabled] = useState(false)
-  const { leftMoney, spent } = useSelector(state => state.money)
-  const canBuy = useCallback(() => {
-    return leftMoney > item.productName
-  }, [])
-
+  const { leftMoney } = useSelector(state => state.money)
 
   const dispatch = useDispatch()
   const handleChange = (e) => {

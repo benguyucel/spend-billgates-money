@@ -12,7 +12,7 @@ function Nav() {
                 <h2>{formatMoney(leftMoney)}</h2>
             </div>
             <div className={styled.brand}>
-                <img className={styled.logo} src='/img/bill.png' />
+                <img alt='bill' className={styled.logo} src='/img/bill.png' />
             </div>
         </div>
     )
