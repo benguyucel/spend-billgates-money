@@ -10,11 +10,11 @@ const Product = ({ item }) => {
   const { leftMoney } = useSelector(state => state.money)
 
   const dispatch = useDispatch()
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     setPageLoaded(true)
-    let counter = Number(e.target.value)
+    let counter = await Number(e.target.value)
     if (counter * item.productPrice > leftMoney) {
-      counter = Math.floor(leftMoney / item.productPrice)
+      counter = await Math.floor((leftMoney / item.productPrice) + (count))
     }
     setCount(counter)
   }
