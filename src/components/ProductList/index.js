@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
 import Product from '../Product'
 import { useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { Grid } from '@chakra-ui/react'
+import React from 'react';
 function ProductList() {
     const { items } = useSelector(state => state.products)
     return (
@@ -16,4 +16,4 @@ function ProductList() {
     )
 }
 
-export default ProductList
+export default React.memo(ProductList)
