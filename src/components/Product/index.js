@@ -21,7 +21,7 @@ const Product = ({ item }) => {
 
   useEffect(() => {
     if (pageLoaded !== false) dispatch(addToCart({ item, count }))
-  }, [count])
+  }, [count, pageLoaded, dispatch, item])
   return (
     <Box maxW='sm' borderWidth='1px'
       borderRadius='lg'
