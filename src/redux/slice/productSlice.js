@@ -1,17 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import data from '../../api/data.json'
 export const productSlice = createSlice({
-    name: "product",
+    name: "products",
     initialState: {
-        items: [],
-        error: "",
-        status: "idle"
-    }, reducers: {
-        fetchProducts: (state) => {
-            state.items = data.products
-        }
-    }
+        items: data.products,
+    }, reducers: {}
 })
-
-export const { fetchProducts } = productSlice.actions
+export const { updateCount, getBuyed } = productSlice.actions
 export default productSlice.reducer

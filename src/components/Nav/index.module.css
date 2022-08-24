@@ -1,11 +1,28 @@
 .nav {
+    position: fixed;
     top: 0;
-    position: sticky;
+    width: 100%;
+    top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
     background-color: #54a0ff;
+    z-index: 9999;
+
+}
+.billMoney{
+    margin-left: -20px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 30px;
-    margin-bottom: 20px;
+    align-content: center;
+    color: #fff;
+}
+.billMoney h2{
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 30px;
 }
 
 .brand {
@@ -15,6 +32,7 @@
     top: 50%;
     transform: rotate(40deg);
 }
+
 
 .brand .logo {
     width: 150px;
