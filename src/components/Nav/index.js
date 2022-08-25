@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import { useSpring, animated } from 'react-spring'
+import { dollarUSLocale } from '../../utils/moneyFormat'
 import styled from './index.module.css'
 function Nav() {
     const { leftMoney } = useSelector(state => state.money)
@@ -7,7 +8,8 @@ function Nav() {
         <div className={styled.nav}>
             <div className={styled.billMoney}>
                 <strong>Spend Bill Gates Money </strong>
-                <h2>
+                <h2 className='leftMoney'>
+
                     <Balance balance={leftMoney} />
                 </h2>
             </div>
@@ -18,15 +20,16 @@ function Nav() {
     )
 }
 function Balance({ balance }) {
+    
     const props = useSpring({ val: balance, from: { val: 0 } });
-    let money = props.val.to((val) => Math.floor(val))
+    let money = props.val.to((val) => {
+        const value = Math.floor(val);
+        return dollarUSLocale.format(value)
+    })
     return (
-        <>
-            <animated.span>
-                {money}
-            </animated.span>
-        </>
-
+        <animated.span>
+            {money}
+        </animated.span>
     );
 }
 export default Nav

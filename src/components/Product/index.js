@@ -1,6 +1,6 @@
 import { Box, Flex, Image, Spacer, Button, Input } from '@chakra-ui/react'
 import styled from './index.module.css'
-import { formatMoney } from '../../utils/moneyFormat'
+import { dollarUSLocale } from '../../utils/moneyFormat'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart } from '../../redux/slice/cartSlice'
@@ -42,7 +42,7 @@ const Product = ({ item }) => {
           {item.productName}
         </Box>
         <Box width={'100%'}>
-          {formatMoney(Number(item.productPrice))}
+          {dollarUSLocale.format(Number(item.productPrice))}
         </Box>
         <Flex width={'100%'} paddingTop={5}>
           <Button disabled={count <= 0} onClick={() => { setPageLoaded(true); setCount(count - 1); }} colorScheme='gray'>Shell</Button>
